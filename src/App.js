@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    
+    const name  = 'sam';
+    const address = 'lagos';
+    const feedback = [
+        {  id:1, name:'george', comment:'happy for me' },
+        {  id:2, name:'kola', comment:'vibe' },
+        {  id:3, name:'tope', comment:'chilling' },
+        {  id:4, name:'kemi', comment:'chillax' },
+        {  id:5, name:'james', comment:'jump' },
+    ];
+
+    return(
+        <>
+        
+        <div className='container'>
+            <h1>Building App</h1>
+            <p>{name}</p>
+            <p>{address}</p>
+        </div>
+        <div className='comments'>
+            <p>commnets({feedback.length})</p>
+           {feedback.map((feedback) => (
+            <p key={feedback.id}>{feedback.name} {feedback.comment}</p>
+           ))}
+        </div>
+        
+        </>
+    )
 }
 
-export default App;
+export default App 
